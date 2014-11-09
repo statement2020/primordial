@@ -13,3 +13,9 @@
     (is (= {:a 2} (map-vals inc {:a 1}))))
   (testing "That an unavail fn gets thrown"
     (is (thrown? Exception (map-vals inc {:a "a"})))))
+
+(deftest test-map-keys
+  (testing "That an fn works"
+    (is (= {2 1} (map-keys inc {1 1}))))
+  (testing "That an unavail fn gets thrown"
+    (is (thrown? Exception (map-keys inc {:a "a"})))))

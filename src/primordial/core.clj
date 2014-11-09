@@ -25,7 +25,7 @@
   [f m]
   (into {}
         (map (fn [[k v]]
-               [(f k v)]) m)))
+               [(f k) v]) m)))
 
 (defn idiomize-key
   "Takes a value and replace undercores with hyphens"
