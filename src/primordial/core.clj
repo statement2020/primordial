@@ -87,3 +87,7 @@
   [coll]
   (->> (filter not-nil? coll)
        multiply))
+
+(defn denominators
+  [collr]
+  (map denominator collr))
