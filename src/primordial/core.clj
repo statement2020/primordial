@@ -59,7 +59,31 @@
   (reduce + coll))
 
 (defn sum-safe
-  "Nil safe version of 'sum'"
+  "Nil safe version of 'sum'."
   [coll]
   (->> (filter not-nil? coll)
        sum))
+
+(defn minus
+  "Subtracts all the numbers in a collection.
+  Not nil safe."
+  [coll]
+  (reduce - coll))
+
+(defn minus-safe
+  "Nil safe version of minus."
+  [coll]
+  (->> (filter not-nil? coll)
+       minus))
+
+(defn multiply
+  "Multiplies all the numbers in a collection.
+  Not nil safe."
+  [coll]
+  (reduce * coll))
+
+(defn multiply-safe
+  "Nil safe version of multiply."
+  [coll]
+  (->> (filter not-nil? coll)
+       multiply))
