@@ -91,3 +91,13 @@
 (defn denominators
   [collr]
   (map denominator collr))
+
+(defn safe-subs
+  "Like subs but does not throw a StringIndexOutOfBoundsException.
+  e.g. (safe-subs \"Hi\" 3) => \"\""
+  ([^String s start]
+    (let [c (.length s)]
+      (safe-subs s start c)))
+  ([^String s start end]
+    (let [c (.length s)]
+      (subs s (min c start) (min c end)))))
